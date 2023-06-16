@@ -1,0 +1,70 @@
+Practice 5
+
+1. $elemMatch
+ match documents that contain an element in an array field
+
+2. Best practice for securing access to MongoDB Atlas cluster
+enable network peering and IP whitelisting
+
+3. Best practice for secure communication
+using SSL/TLS encryption for network communication
+
+4. anti-pattern
+Over-normalizing data to reduce the chances of data inconsistencies. 
+
+5. mongodb+srv://username:password@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+mongodb+srv: define the protocol that will be used to connect to the MongoDB database.
+cluster0.mongodb.net is the host, or server
+myFirstDatabase is the database
+
+6. The Attribute Pattern 
+    ...
+    release_USA: ISODate("2017-04-09T01:00:00+01:00"),
+    release_France: ISODate("2017-04-09T01:00:00+01:00"),
+    release_Italy: ISODate("2017-08-17T01:00:00+01:00"),
+    ...
+
+7. Sharding 
+used by MongoDB to ensure high scalability
+
+8. db.collection.createIndex({field1: 1, field2: 1})
+create an index on multiple fields in MongoDB
+
+9. snapshot
+read concern levels should be used in conjunction with causal consistency to ensure session consistency
+
+10. embedded relationship
+Advantages: improved query performance, reduced need for joins, and increased maintainability. 
+
+Disadvantages: limited size of documents, increased complexity of updates to related entities, and decreased scalability. 
+
+11. Sharding the data across multiple servers.
+best practice for managing data growth in MongoDB.
+
+12. db.routes.getIndexes() 
+isplay all indexes in a MongoDB collection. 
+
+13. db.collection.find()
+find all documents in a collection named "customers"
+
+14. anti-pattern
+Using nested arrays to model hierarchical data.
+
+15. mongodump
+export data in BSON format
+
+16. deletedCount
+db.users.deleteMany({ age: { $lt: 18 }, status: "inactive" }).deletedCount
+get the number of deleted documents
+
+17.  Schema Versioning Pattern
+
+keep multiple versions of a document, and those versions can have different fields for each version in your application.
+
+update the current schema with additional fields without shutting down the system for this upgrade. 
+
+18. deleteOne() 
+ removes the document from all nodes in the replica set
+deleteMany() 
+ removes the document from the primary node only.

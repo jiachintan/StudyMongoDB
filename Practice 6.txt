@@ -1,0 +1,58 @@
+Practice 6
+
+1. Replication provides redundancy and increases data availability.
+With multiple copies of data on different database servers, replication provides a level of fault tolerance against the loss of a single database server.
+
+2. db.orders.find({}).forEach(printjson).
+printjson argument ensures that each document is printed in a readable JSON format.
+
+3. anti pattern 
+Storing geospatial data as strings instead of as geospatial data types. 
+
+4. 16 MB.
+maximum size of a MongoDB document
+
+5. listIndexes
+view the indexes of collections within the database
+
+6. projection document 
+specify or restrict the fields to be returned in the query results. 
+
+7. Schema validation 
+ensures the presence of required fields and their data types within a document. 
+
+8. Subset Pattern
+retrieve a course and its ten most recent reviews.
+
+9. db.companies.find( { $expr: { $eq: ['$name', '$twitter_username'] } } )
+
+10. anti pattern
+Using a flat collection to store hierarchical data. 
+
+11.  data modeling in MongoDB
+Embedded data model
+Document data model
+Key-value data model
+
+12. Sharding in MongoDB involves splitting data horizontally across multiple servers, distributing load and storing data based on a shard key. 
+
+13. Best practice for monitoring a MongoDB Atlas cluster 
+Enabling Performance Advisor and Alerts in Atlas.
+
+14. Connection pooling 
+involves maintaining a "pool" of open database connections, which can be reused for multiple requests, improving performance. 
+
+15. Anti pattern
+Denormalizing data to reduce the number of update operations required to update related data. 
+
+16. A MongoDB replica set improves read performance by enabling read operations to be distributed across multiple secondary nodes. However, read operations on secondary nodes may return stale data.
+
+17. "Array" data type 
+used to store a list of values with inconsistent data types.
+
+
+
+
+
+
+

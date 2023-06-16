@@ -1,0 +1,57 @@
+Practice 1
+1. clusterAdmin
+greater cluster management access.
+
+2. Array
+store multiple values for a single field in a document
+
+3. BSON types
+Array
+ObjectId
+String
+
+4. Rules build query index
+equality, sort, range
+
+5. $cat /etc/mongod.conf
+display MongoDB configuration file from the command line (Linux)
+
+6. BSON:
+Binary JSON
+support more data type than JSON
+contain metadata to describe a document/object
+
+7. db.collection.find().explain()
+- the index used by the chosen plan
+- whether the sort stage was performed by index or perfomed in memory
+- all stages that the query must go through with detailes about the time it takes, number of documents process and returned to the next stage in the pipeline.
+
+8. db.runCommand(command) 
+provides a helper to run specified database commands.
+
+9. BSON
+-faster to parse and lighter to store than JSON
+-can view it in JSON
+-support more data types than JSON
+
+10. mongd
+- default port is 27017
+- localhost host 127.0.0.1
+- default data directory /data/db
+
+11. cursor.explain()
+- get information about the query plan
+
+12. Contraint impact data model
+- RAM
+- Network
+- Security & Compliance
+
+13. bulkwrite
+No insertMany please.
+db.sales.bulkWrite({
+  insertOne: [
+    { name: "Product A", quantity: 10 },
+    { name: "Product B", quantity: 5 }
+  ]
+})

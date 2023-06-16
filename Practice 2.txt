@@ -1,0 +1,79 @@
+Practice 2
+
+1. cursor.hint() 
+force to use a specific index for a query.
+
+2. cursor.explain()
+obtain info about the query execution and optimization plan.
+
+3. mongodb+srv://datascientist34:ta33w9r@xtr-187.srv.net/admin
+username: datascientist34
+ta33w9r: password
+xtr-187.srv.net: address of deployment or cluster.
+
+4. mongorestore : restore data from binary backup, add a collection store in BSON file to cluster.
+mongodump: create a binary backup of data.
+mongoimport: import data from JSON/CSV.
+mongoexport: export data to JSON/CSV.
+
+5. Multi-document transaction: ensure data consistency in high-concurrency situation.
+
+6. Sharding: distribute data across multiple server.
+used for horizontal scaling of write-heavy workload.
+
+7. Secondary Read Preference: time-inensive aggregation can be offloaded to a secondary member of the replica set.
+
+8. db.collection.getIndexes(): display the indexes on the collection:index name, key pattern, and other details.
+
+9. Most efficient index
+Equality fields first
+Sort fields next
+Range fields last
+
+10. findAndModify, { new: true } option
+ensures that the modified document is returned upon modification.
+
+
+11. Change Streams: Real-time dashboard.
+GridFS : Storing and retrieving large file such as image or audio
+
+12. sortByCount
+Group documents by a certain field and count the number of documents in each group, followed by sorting the results by count in descending order.
+
+13. $out: output the results to a specific collection
+
+14. { $sample: { size: 10 } }: randomly select 10 documents from a specific collection
+
+15. number of documents in the collection
+db.products.countDocuments()
+db.products.find().count()
+
+16. Each individual pipeline stage has a limit of 100MB of RAM.
+
+17. Sharding is a process of distributing data across multiple machines
+
+18. Replication is the process of maintaining multiple copies of the same data on different machines. 
+
+19. db.movies.find({ $expr: { $gt: ["$imdb.votes", "$year"] } } )
+dollar sign 
+Without the dollar sign, MongoDB treats them as literal strings instead of field references.
+
+20. $set: { "courses.$.grade": 95 }
+The grade is nested within the courses array, the correct field path should be "courses.$.grade".
+
+21. insertedIds
+In MongoDB, to return the _id values for all inserted documents, you can chain the insertedIds property to the result of the insertMany() method.
+
+22. $sortByCount
+$group + $sort
+
+23. $set: { score: { $inc: 1 }
+$set operator with the $inc operator to increase its value.
+
+24."type":"autocomplete", "tokenization":"edgeGram"
+autocomplete index be defined to look for matches at the beginning of a word
+
+25. MongoDB Compass
+powerful GUI for querying, aggregating, and analyzing your MongoDB data in a visual environment.
+
+26. MongoDB drivers handle the creation and management of indexes, improving query performance.

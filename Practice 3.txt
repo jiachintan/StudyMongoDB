@@ -1,0 +1,54 @@
+Pratice 3
+
+1. $regex: /.*ian$/
+regular expression need to $ to end
+
+2. Sharding
+Enhanced write performance
+
+3. Change Streams
+Allow application to access real-time data changes.
+
+4. MongoDB sorts the arrays based on their first element.
+
+5. db.collection.findOne() 
+retrieves a single document from the collection
+
+6. The "majority" read concern 
+ensures that the returned data has been confirmed by a majority of the replica set members. It guarantees that the data will not be rolled back under normal circumstances and is ideal for applications that require consistent reads.
+
+7. pymongo
+db.collection.update_many
+
+8. Text Indexes 
+are designed to facilitate searching for string content in documents.
+
+9. db.sales.find( { items: { $elemMatch: { name: 'printer paper' } } } )
+$elemMatch operator to match documents where the 'items' array contains an element with the name 'printer paper'. 
+
+10. Capped collections 
+automatically remove the oldest documents once the maximum size or document count, defined when the collection was created, is reached.
+
+11. db.movies.find( { genres: { $all: ["Crime", "Mystery"] } } )
+it will return movies that have both "Crime" and "Mystery" genres in their genres array.
+
+12. db.collection('customers').insertOne(newCustomer)
+Node.js MongoDB driver, the insertOne() method is used to insert a new document into a collection.
+
+13. Capped Collections 
+To enforce size limits on collections, automatically overwriting the oldest documents when the size limit is reached.
+
+14. The Outlier Pattern 
+This pattern involves handling exceptional cases or outliers that don't fit within the standard data model.
+
+15. createView
+db.createView("UsersView", "Users", [{$project: {username: 1, email: 1, createdAt: 1}}]) 
+
+16. Scaling horizontally is generally cheaper than scaling vertically.
+When scaling horizontally our scaling cost increases linearly. 
+
+17. ObjectId is generated based on 
+timestamp, 
+machine ID, 
+process ID, and 
+a process-local incremental counter. 

@@ -1,0 +1,54 @@
+Pratice 4
+
+1. Sparse index only indexes documents that contain the indexed field.
+Non-sparse index indexes all documents in the collection.
+
+2. Referenced relationships
+Improved maintainability and reduced complexity of updates to related entities.
+
+3. db.movies.find( {}, { title: 1, _id: 0 } ).sort( { year: 1 } ).skip(5)
+this query will return the "title", id is skip.
+
+4. 27017
+MongoDB's default port number for client connections.
+
+5. db.createCollection("collection_name")
+
+6. db.products.createIndex( { product_name: 1, product_category: -1 } )
+createIndex is used to create an index in MongoDB
+
+7. anti pattern
+Using a single collection for all entities.
+
+8. camelCase for database and collection names.
+
+9. B-tree 
+used data structures for indexing in databases.
+
+10. shard key
+determining the distribution of data across shards 
+
+11. equality, sort, and range
+
+12. admin database
+primarily used for authentication and authorization purposes. 
+It stores user credentials and privileges, allowing administrators to manage access control for the entire MongoDB deployment. 
+Certain administrative actions, such as creating or modifying user roles and managing cluster configurations, require access to the admin database.
+
+13. db.shipwrecks.createIndex({'coordinates': '2dsphere'})
+2dsphere geospatial index 
+
+14. A unique index enforces a unique constraint on the indexed field, while a non-unique index allows multiple documents to have the same value in the indexed field. 
+
+15. findAndModify
+db.orders.findAndModify({
+  query: { status: "Pending" },
+  update: { $set: { status: "Completed" } }
+})
+
+16. text search 
+db.collection.find({$text: {$search: "search_query"}}) 
+
+17. find()
+No sort order, the documents are returned in the order they were inserted into the collection. 
+
