@@ -1,0 +1,168 @@
+C# Practice Question:
+01. D
+02. B and D
+03. A and D.
+04. C
+05. D
+06. B
+07. B
+08. B
+09. B
+10. B and C
+11. B
+12. D
+13. B
+14. D
+15. D
+16. B
+17. B
+18. C
+19. D
+20. A and B
+21. B
+22. D
+23. B and D
+24. A
+25. D
+26. B
+27. D
+28. A.
+29. A and B
+30. C
+
+
+1. Which numeric type is a valid MongoDB BSON type?
+D. 32-bit integer
+https://www.mongodb.com/docs/v4.2/reference/bson-types/
+
+4. The name is a.log, the owner of the file is applicationA, the size of the file is 1KB, and the file was deleted.
+
+What command will properly add this document to the files collection using mongosh?
+C. db.files.insertOne({ file: "a.log", owner: "applicationA", size: 1024, deleted: true })
+
+
+6. An `inventory` collection consists of 200 documents.
+What method should be used to get all documents from a cursor using mongosh?
+B. db.inventory.find().toArray();
+
+7. How should the 'autocomplete' index be defined to look for matches at the beginning of a word on the name field?
+B. { "mappings": {"dynamic":false, "fields": {"name": [
+{"type" : "autocomplete", "tokenization:"edgeGram"}
+]}}
+
+8. A company wants to create a mobile app for users to find restaurants by name. The developer wants to show the user restaurants that match their search. An Atlas Search index has already been created to support this query.
+B. db.restaurants.aggregate(
+[{"$search" : {
+"text": {"path": "name", "query":"cuban"}
+}"}])
+
+https://www.mongodb.com/docs/atlas/atlas-search/path-construction/
+
+10. db.getSiblingDB("mdb").coll.aggregate([
+    { $out: {db:'test', collection:'results'}} ])
+
+https://www.mongodb.com/docs/manual/reference/operator/aggregation/out/
+{ $out: { db: "<output-db>", coll: "<output-collection>" } }
+
+Expected result:
+B. There is a syntax error command. Collection results is not created.
+C. No documents in collection coll are written to collection results.
+
+11. replaceOne()
+ replaces the first matching document in the collection that matches the filter, using the replacement document.
+
+12. Given the collection called coll, with only the following documents,
+
+{
+ _id:1,
+ a:1,
+ b:1
+},
+{
+ _id:2,
+ a:2
+}
+The update operation db.coll.updateMany({},{$set:{b:2}}) successfully completes.
+
+What is the output of db.coll.find()?
+
+The updateMany() operation updates all the documents in the "coll" collection by setting the value of the "b" field to 2. 
+As a result, the first document now has the updated value of b: 2, while the second document, which previously did not have a "b" field, now has b: 2 after the update.
+
+15. db.cakeFlavors.updateOne(
+  { flavor: "strawberry" },
+  { $set: { number: 100 } },
+  { upsert: true }
+)
+
+upset dont have dollar sign $
+
+17. findOneAndDelete
+Deletes a single document based on the filter and sort criteria, returning the deleted document.
+
+18. findOne
+Returns one document that satisfies the specified query criteria on the collection or view.
+
+21. Given a collection called collection, in which all documents have the following shape:
+
+{
+ _id:1,
+ objs:[
+   {a:1,b:2},{a:2,b:1}
+ ] 
+}
+And the query on this collection:
+
+db.collection.find({"objs.a":1})
+What index will support this query?
+
+A. {"objs.a" :1}
+
+22. Given the following query:
+
+db.coll.find({}).sort({"product": 1, "price": 1})
+Which two indexes will improve the performance of this query?
+
+A. {"product": 1, "price":1}
+D. {"product": -1, "price":-1}
+
+24. What mongosh command shows how many indexes are associated with an `inventory` collection?
+A. db.inventory.getIndexes()
+
+25.A typical `products` collection is in an e-commerce database.
+
+What schema is the most effective?
+
+(Choose 1)
+
+D. Current inventory/availability for product should be embedded in each product document.
+
+26. A Cooking dataset is in Atlas. There is a Recipes database with a Desserts collection.
+
+How can one document be found that provides a recipe for cookies without chocolate using Atlas Data Explorer?
+
+B. 1. Select the collection on the left-hand side. 2. Select the "Aggregation" view. 3. Specify the first stage as $match query: {dessert_type: "Cookie", ingredients: {$nin: ["chocolate"]}} 4. Set $limit to 1.
+
+27. D.
+
+IMongoDatabase db = dbClient.GetDatabase("postal_data");
+var zipEntries = db.GetCollection<ZipEntry>("zip_entries");
+var builder = Builders<ZipEntry>.Filter;
+var filter = builder.Eq(x => x.State, "AL") & builder.Gt(x => x.Population, 2000);
+var sort = Builders<ZipEntry>.Sort.Ascending(x => x.City);
+var projection = Builders<ZipEntry>.Projection.Include(x => x.City).Exclude(x => x.Zip);
+var results = zipEntries.Find(filter).Sort(sort).Project(projection).ToList();
+
+28. . What code snippet allows access to the `employees` collection in the `hr` database, given a properly configured "mongoClient"?
+
+(Choose 1)
+
+A. var people = mongoClient.GetDatabase("hr").GetCollection<Employee>("employees");
+
+29.What are two advantages of Connection Pooling with the .NET/C# Driver? 
+(Choose 2)
+A. Reduce application latency
+B. Limit the number of connections to the server
+
+30.
+C. collection.UpdateMany(filter, update);
