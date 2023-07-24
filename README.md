@@ -6,3 +6,6 @@ I have studied the course which I purchased from Udemy.
 
 I have completed the courses from MongoDB Univisity. 
 - https://learn.mongodb.com/
+
+I have finished the Associate Developer C# Practice Questions.
+- https://learn.mongodb.com/learn/course/associate-developer-c-sharp-practice-questions/prep-questions/practice-questions
